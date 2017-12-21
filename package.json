@@ -1,0 +1,15 @@
+{
+  "name": "appNode",
+  "version": "1.0.0",
+  "description": "app en base de node",
+  "main": "server.js",
+  "repository": "https://github.com/StephHiyagon/appNodeDocker.git",
+  "author": "@StephHiyagon",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "express": "^4.16.2"
+  }
+}
