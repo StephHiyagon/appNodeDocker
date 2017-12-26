@@ -4,13 +4,13 @@ jobs:
     docker:
       - image: circleci/node:7.10
 
-    working_directory: ~/repo
+    working_directory: ~/appNodeDocker
 
     steps:
-      - setup_remote_docker:
-          version:17.09.0-ce
       - checkout
-      - run: docker build -t practice .
+      - run:
+          name: construcción de docker
+          command: docker build -t practice .
 
       - restore_cache:
         keys:
