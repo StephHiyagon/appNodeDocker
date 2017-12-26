@@ -4,4 +4,4 @@ machine:
 
 dependencies:
   override:
-    - docker build -t app-node .
+    - docker build -t practice .
