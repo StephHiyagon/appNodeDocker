@@ -7,16 +7,21 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - setup_remote_docker:
+          version:17.09.0-ce
       - checkout
-      - run:
-          name: Install dependencies
-          command: npm install
+      - run: docker build -t practice .
+
+      - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+        - v1-dependencies-
+
+      - run: yarn install
+
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run:
-          name: construcción de contenedor docker
-          command: docker build -t practice .
+          key: v1-dependecies-{{ checksum "package.json" }}
 
 
